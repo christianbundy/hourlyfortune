@@ -1,6 +1,6 @@
 var config =  require('./config.js');
 var Twit =    require('twit');
-var child =    require('child_process');
+var child =   require('child_process');
 var twitter = new Twit(config);
 
 setInterval(function () {
