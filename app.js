@@ -1,18 +1,16 @@
-var Twit = require('twit')
-var config = require('./config.js');
+var config =  require('./config.js');
+var Twit =    require('twit');
+var child =    require('child_process');
+var twitter = new Twit(config);
 
-var exec = require('child_process').exec;
-var T = new Twit(config);
-function execute(command, callback){
-  exec(command, function(error, stdout, stderr){ callback(stdout); });
-};
-
-// run every hour
 setInterval(function () {
-  execute('fortune -s -n 140', function (fortune) {
-    T.post('statuses/update', { status: fortune }, function(err, reply) {
+  child.exec('fortune -s -n 140', function (error, stdout, stderr) {
+    if (error) throw error;
+    if (stderr) throw stderr;
+    twitter.post('statuses/update', { status: stdout }, function(err, response) {
       if (err) throw err;
-      console.log(fortune);
+      console.log(stdout);
     });
   });
-},60*60*1000);
+}, 60 * 60 * 1000);
+
