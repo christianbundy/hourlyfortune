@@ -8,11 +8,11 @@ function execute(command, callback){
 };
 
 // run every hour
-//setInterval(function () {
+setInterval(function () {
   execute('fortune -s -n 140', function (fortune) {
     T.post('statuses/update', { status: fortune }, function(err, reply) {
       if (err) throw err;
       console.log(fortune);
     });
   });
-//},60*60*1000);
+},60*60*1000);
