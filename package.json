@@ -1,0 +1,31 @@
+{
+  "name": "hourlyfortune",
+  "version": "0.0.0",
+  "description": "Posts a tweet every hour to @hourlyfortune",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christianbundy/hourlyfortune.git"
+  },
+  "keywords": [
+    "fortune",
+    "twitter",
+    "bot"
+  ],
+  "author": "Christian Bundy",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/christianbundy/hourlyfortune/issues"
+  },
+  "homepage": "https://github.com/christianbundy/hourlyfortune",
+  "dependencies": {
+    "twit": "~1.1.12",
+    "child": "0.0.2"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
