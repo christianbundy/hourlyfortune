@@ -4,7 +4,7 @@ var child =   require('child_process');
 var twitter = new Twit(config);
 
 setInterval(function () {
-  child.exec('./vendor/fortune -s -n 140', function (error, stdout, stderr) {
+  child.exec('./vendor/fortune/fortune -s -n 140', function (error, stdout, stderr) {
     if (error) throw error;
     if (stderr) throw stderr;
     twitter.post('statuses/update', { status: stdout }, function(err, response) {
